@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-app
+  labels:
+    app: final-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: final-app
+  template:
+    metadata:
+      labels:
+        app: final-app
+    spec:
+      containers:
+        - name: final-app
+          image: rrragul/final:latest
+          ports:
+            - containerPort: 80
